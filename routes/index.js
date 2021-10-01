@@ -21,4 +21,9 @@ router.get('/services', function(req, res, next) {
   res.render('services', { title: 'Portfolio | Services', active: 'services' });
 });
 
+/* GET contact page. */
+router.get('/contact', function(req, res, next) {
+  res.render('contact', { title: 'Portfolio | Contact', active: 'contact' });
+});
+
 module.exports = router;

@@ -45,3 +45,7 @@ a:hover{
 .navbar-light .navbar-nav .active>.nav-link {
   color: rgb(74 180 226);
 }
+
+.hide{
+  display: none;
+}
