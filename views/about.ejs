@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      <%= title %>
+    </title>
+
+    <!-- AOS CSS file for animation -->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!-- Template Main CSS file -->
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/about.css">
+
+  </head>
+
+  <body>
+    <!-- Include header partial -->
+    <%- include('./partials/header.ejs') -%>
+
+      <main>
+        <h1 class="center">About</h1>
+
+        <div class="d-flex wrapper row">
+          <!-- Personal information -->
+          <div class="col-md-12 col-lg-4">
+            <img src="/images/profile.jpeg" alt="profile pic" class="profile-img">
+            <p>
+              <i class="bi bi-envelope"></i>
+              <strong>Email: </strong> <span>decentlevi@gmail.com</span>
+            </p>
+            <p data-aos="zoom-in">
+              <a href="https://filetransfer.io/data-package/9mMXCfQf/download" class="cust-btn" download>Download CV</a>
+            </p>
+
+            <div></div>
+          </div>
+
+          <!-- Skill set information -->
+          <div class="col-md-12 col-lg-8">
+            <h3 data-aos="zoom-in">ThankGod Nnaji</h3>
+
+            <p class="statement" data-aos="fade-in">I am a Software Developer living in Toronto, Canada. I have over five years background in Business and the print media industry. I recently switched to Tech and Have been programming for a year now with some of the languages mentioned above. I am comfortable with C#, HTML, CSS and a bit of JavaScript today and am in the process of learning Software Engineering Technology – AI at Centennial College.  I am also learning Python, Java, NodeJs, ExpressJs, React. I am driven by curiosity and a passion to continuous learning and self improvement. Are you looking to have an online presence or looking to add to your team of developers? I will be great addition to your team. You can reach out to me through any of my contacts you prefer.
+            </p>
+
+            <div class="skill-wrapper">
+              <h3 data-aos="fade-up">Technical Skills</h3>
+
+              <div class="skill-display">
+                <span class="badge badge-primary">Python</span>
+                <span class="badge badge-info">Java</span>
+                <span class="badge badge-success">C#</span>
+                <span class="badge badge-danger">CSS</span>
+                <span class="badge badge-warning">Git</span>
+                <span class="badge badge-info">Express</span>
+                <span class="badge badge-danger">HTML</span>
+                <span class="badge badge-success">JavaScript</span>
+                <span class="badge badge-primary">AI</span>
+              </div>
+            </div>
+
+            <div class="skill-wrapper">
+              <h3 data-aos="fade-up">Soft Skills</h3>
+
+              <div class="skill-display" data-aos="fade-up">
+                <span>Time Management</span>
+
+                <div class="progress" style="height: 0.95em;">
+                  <div class="progress-bar bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100">80%</div>
+                </div>
+              </div>
+
+              <div class="skill-display" data-aos="fade-up">
+                <span>Team Work</span>
+
+                <div class="progress" style="height: 0.95em;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100">90%</div>
+                </div>
+              </div>
+
+              <div class="skill-display" data-aos="fade-up">
+                <span>Excellent Communication</span>
+
+                <div class="progress" style="height: 0.95em;">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">85%</div>
+                </div>
+              </div>
+
+              <div class="skill-display" data-aos="fade-up">
+                <span>Critical Thinking</span>
+
+                <div class="progress" style="height: 0.95em;">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 89%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">89%</div>
+                </div>
+              </div>
+
+              <div class="skill-display" data-aos="fade-up">
+                <span>Attention to Details</span>
+
+                <div class="progress" style="height: 0.95em;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                </div>
+              </div>
+
+              <div class="skill-display" data-aos="fade-up">
+                <span>Leadership</span>
+
+                <div class="progress" style="height: 0.95em;">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0"
+                    aria-valuemax="100">80%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Include footer partial -->
+      <%- include('./partials/footer.ejs') -%>
+
+        <!-- Bootstrap scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+
+        <!-- AOS library script for animations -->
+        <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+        <!-- Template scripts -->
+        <script src="/javascripts/index.js"></script>
+  </body>
+
+</html>
