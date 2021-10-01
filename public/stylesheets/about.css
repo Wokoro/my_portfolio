@@ -5,9 +5,10 @@
  */
 
  .wrapper{
-   width: 70%;
-   margin: auto;
-   margin-top: 5em;
+  margin: auto;
+  margin-top: 5em;
+  padding: 0 1em;
+  max-width: 70em
 }
 
 .statement{
@@ -31,4 +32,6 @@
 .badge{
   padding: 0.5em 1em;
   margin-right: .5em;
+  margin-top: 0.5em;
+  width: 7em;
 }
