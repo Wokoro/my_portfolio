@@ -16,4 +16,9 @@ router.get('/projects', function(req, res, next) {
   res.render('projects', { title: 'Portfolio | Projects', active: 'projects' });
 });
 
+/* GET services page. */
+router.get('/services', function(req, res, next) {
+  res.render('services', { title: 'Portfolio | Services', active: 'services' });
+});
+
 module.exports = router;
