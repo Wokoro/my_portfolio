@@ -1,8 +1,47 @@
+/* Date:
+ * File Name: 
+ * Student ID:
+ * Student Name:
+ */
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-bottom: 0;
+  overflow-x: hidden;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+a:active{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.center{
+  text-align: center;
+}
+
+.cust-btn{
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #fff;
+  background: #4ab4e2;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+  color: rgb(74 180 226);
 }
