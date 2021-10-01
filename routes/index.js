@@ -11,4 +11,9 @@ router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Portfolio | About', active: 'about' });
 });
 
+/* GET projects page. */
+router.get('/projects', function(req, res, next) {
+  res.render('projects', { title: 'Portfolio | Projects', active: 'projects' });
+});
+
 module.exports = router;
