@@ -1,11 +1,13 @@
 const faker = require('faker');
 
 const UserModel = require('../models/user');
+const { hashPassword } = require('../utils');
 
 const currentUser = {
-    username: 'user@gmail.com',
+    username: 'default',
     email: 'user@gmail.com',
     address: 'sample user address',
+    password: hashPassword('password'),
     contact_number: '(695) 583-6536',
     sex: 'male'
 }
@@ -18,7 +20,8 @@ for (let i = 0; i < 20; i++) {
         email: faker.internet.email(),
         address: faker.address.streetAddress(),
         contact_number: faker.phone.phoneNumber(),
-        sex: ['male', 'female'][i % 2]
+        sex: ['male', 'female'][i % 2],
+        password: hashPassword('password')
     })
 }
 

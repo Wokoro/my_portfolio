@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var flash = require('connect-flash');
+
 var seedDB = require('./seeds')
 
 require('dotenv').config();
@@ -19,8 +21,9 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(process.env.COOKIE_SEC));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
 
 mongoose.connect(process.env.DATABASE_URL);
 

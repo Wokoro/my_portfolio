@@ -1,4 +1,4 @@
-const bycrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 // Function to hash user password
 exports.hashPassword = (password) => bcrypt.hashSync(password, 10);
