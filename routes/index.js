@@ -56,4 +56,7 @@ router.get('/logout', authController.logout);
 /* GET protected contact list view */
 router.get('/contact-list', [authenticator, contactController.list]);
 
+/* GET protected contact deletion route */
+router.post('/delete-account', [authenticator, contactController.delete]);
+
 module.exports = router;

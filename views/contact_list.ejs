@@ -29,73 +29,82 @@
   <!-- Include header partial -->
   <%- include('./partials/header.ejs') -%>
 
-    <main class="wrapper">
-      <h1>Contacts</h1>
-      <div class="table-responsive table-holder">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Username</th>
-              <th scope="col">Number</th>
-              <th scope="col">Email</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% for(var i=0; i < users.length; i++) { %>
-              <tr>
-                <td>
-                  <%= (i+1) %>
-                </td>
-                <td>
-                  <%= users[i].username %>
-                </td>
-                <td>
-                  <%= users[i].contact_number %>
-                </td>
-                <td>
-                  <%= users[i].email %>
-                </td>
-                <td>
-                  <form>
-                    <input type="hidden" value=<%=users[i]._id%> />
-                    <input type="button" class="btn btn-info custom-btn" value="update" />
-                  </form>
-                </td>
-                <td>
-                  <form>
-                    <input type="hidden" value=<%=users[i]._id%> />
-                    <input type="button" class="btn btn-danger custom-btn" value="delete" />
-                  </form>
-                </td>
-              </tr>
-              <% } %>
-          </tbody>
-        </table>
+    <% if(locals.message){ %>
+      <div class="row mb-5 align-items-end">
+        <div class="col-12 heading">
+          <div class="p-3 mb-2 bg-success text-white item" data-aos="zoom-in">
+            <%= locals.message %>
+          </div>
+        </div>
       </div>
-    </main>
+      <% } %>
+        <main class="wrapper">
+          <h1>Contacts</h1>
+          <div class="table-responsive table-holder">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Number</th>
+                  <th scope="col">Email</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i < users.length; i++) { %>
+                  <tr>
+                    <td>
+                      <%= (i+1) %>
+                    </td>
+                    <td>
+                      <%= users[i].username %>
+                    </td>
+                    <td>
+                      <%= users[i].contact_number %>
+                    </td>
+                    <td>
+                      <%= users[i].email %>
+                    </td>
+                    <td>
+                      <form>
+                        <input type="hidden" value=<%=users[i]._id%> />
+                        <input type="submit" class="btn btn-info custom-btn" value="update" />
+                      </form>
+                    </td>
+                    <td>
+                      <form action="/delete-account" method="post" role="form">
+                        <input type="hidden" name="account_id" value=<%=users[i]._id%> />
+                        <input type="submit" class="btn btn-danger custom-btn" value="delete" />
+                      </form>
+                    </td>
+                  </tr>
+                  <% } %>
+              </tbody>
+            </table>
+          </div>
+        </main>
 
-    <!-- Include footer partial -->
-    <%- include('./partials/footer.ejs') -%>
+        <!-- Include footer partial -->
+        <%- include('./partials/footer.ejs') -%>
 
-      <!-- Bootstrap scripts -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+          <!-- Bootstrap scripts -->
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
-      <!-- AOS library script for animations -->
-      <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+          <!-- AOS library script for animations -->
+          <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
-      <!-- Template scripts -->
-      <script src="/javascripts/index.js"></script>
+          <!-- Template scripts -->
+          <script src="/javascripts/index.js"></script>
 </body>
 
 </html>
