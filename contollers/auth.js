@@ -18,3 +18,9 @@ exports.login = async function login(req, res, next) {
         next(err)
     }
 }
+
+exports.logout = async function logout(req, res, next) {
+    res.clearCookie('username');
+
+    res.redirect('login')
+}

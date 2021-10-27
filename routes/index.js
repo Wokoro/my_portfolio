@@ -47,4 +47,7 @@ router.get('/login', function (req, res, next) {
 /* POST login management route */
 router.post('/auth/login', authController.login);
 
+/* POST logout management route */
+router.get('/logout', authController.logout);
+
 module.exports = router;
