@@ -1,5 +1,8 @@
 var express = require('express');
+
 var authController = require('../contollers/auth');
+var contactController = require('../contollers/contact');
+var { authenticator } = require('../middleware');
 
 var router = express.Router();
 
@@ -49,5 +52,8 @@ router.post('/auth/login', authController.login);
 
 /* POST logout management route */
 router.get('/logout', authController.logout);
+
+/* GET protected contact list view */
+router.get('/contact-list', [authenticator, contactController.list]);
 
 module.exports = router;

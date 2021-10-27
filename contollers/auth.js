@@ -12,7 +12,7 @@ exports.login = async function login(req, res, next) {
 
         res.cookie('username', user.username);
 
-        res.send('Login successful');
+        res.redirect('/contact-list');
 
     } catch (err) {
         next(err)

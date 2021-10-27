@@ -4,7 +4,7 @@ const UserModel = require('../models/user');
 const { hashPassword } = require('../utils');
 
 const currentUser = {
-    username: 'default',
+    username: 'Default.user',
     email: 'user@gmail.com',
     address: 'sample user address',
     password: hashPassword('password'),
