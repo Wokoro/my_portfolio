@@ -5,7 +5,9 @@ exports.login = async function login(req, res, next) {
         const { username, password } = req.body;
         const user = await userModel.findOne({ username });
 
-        if (!user) {
+        const isValid = user && await user.comparePassword(password);
+
+        if (!isValid) {
             res.locals.error = 'Username or password incorrect';
             return res.render('login', { title: 'Portfolio | login', active: 'login' });
         }
@@ -15,6 +17,7 @@ exports.login = async function login(req, res, next) {
         res.redirect('/contact-list');
 
     } catch (err) {
+        console.log('error: ', err)
         next(err)
     }
 }

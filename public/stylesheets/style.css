@@ -5,30 +5,30 @@
  */
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   padding-bottom: 0;
   overflow-x: hidden;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
   text-decoration: none;
 }
 
-a:active{
+a:active {
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.cust-btn{
-  font-family: "Raleway", sans-serif;
+.cust-btn {
+  font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
@@ -42,14 +42,14 @@ a:hover{
   background: #4ab4e2;
 }
 
-.navbar-light .navbar-nav .active>.nav-link {
+.navbar-light .navbar-nav .active > .nav-link {
   color: rgb(74 180 226);
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-.mission_statement{
+.mission_statement {
   font-size: 1.5em;
 }

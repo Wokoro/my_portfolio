@@ -68,13 +68,13 @@
                       <%= users[i].email %>
                     </td>
                     <td>
-                      <form>
-                        <input type="hidden" value=<%=users[i]._id%> />
+                      <form action="/update-account" method="get" role="form">
+                        <input type="hidden" name="account_id" value=<%=users[i]._id%> />
                         <input type="submit" class="btn btn-info custom-btn" value="update" />
                       </form>
                     </td>
                     <td>
-                      <form action="/delete-account" method="post" role="form">
+                      <form action="/delete-account" method="get" role="form">
                         <input type="hidden" name="account_id" value=<%=users[i]._id%> />
                         <input type="submit" class="btn btn-danger custom-btn" value="delete" />
                       </form>

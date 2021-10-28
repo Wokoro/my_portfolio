@@ -26,10 +26,10 @@
             <li class="nav-item px-2" data-active="contact">
                 <a class="nav-link" href="/contact">Contact</a>
             </li>
-            <li class="nav-item px-2 d-flex align-items-center" data-active="auth">
+            <li class="nav-item px-2 d-flex align-items-center" data-active="contact-list">
                 <%if(locals.username){ %>
                     <div class="">
-                        <a href="/contact-list" data-active="contact-list" style="margin: 0 2em;">
+                        <a href="/contact-list" style="margin: 0 2em;">
                             <%= username %>
                         </a>
                         <a href="/logout" class="btn btn-danger">Logout</a>
