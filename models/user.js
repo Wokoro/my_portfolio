@@ -17,15 +17,15 @@ const UserSchema = new mongoose.Schema({
         type: String,
         minlength: [10, 'Address too short expect a minimum of 10 characters']
     },
+    password: {
+        type: String,
+        required: true,
+        default: hashPassword('password')
+    },
     contact_number: {
         type: String,
         required: [true, 'Contact phone number is required'],
         unique: true
-    },
-    sex: {
-        type: String,
-        enum: ['male', 'female'],
-        default: null
     }
 });
 
@@ -39,7 +39,7 @@ UserSchema.pre('save', function (next) {
 });
 
 // Add a schema level method to compare provided user password with store password
-UserSchema.methods.comparePassword = function (password) {
+UserSchema.methods.comparePassword = async function (password) {
     return comparePassword(password, this.password)
 };
 

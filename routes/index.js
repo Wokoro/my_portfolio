@@ -50,13 +50,19 @@ router.get('/login', function (req, res, next) {
 /* POST login management route */
 router.post('/auth/login', authController.login);
 
-/* POST logout management route */
+/* GET logout management route */
 router.get('/logout', authController.logout);
 
 /* GET protected contact list view */
 router.get('/contact-list', [authenticator, contactController.list]);
 
 /* GET protected contact deletion route */
-router.post('/delete-account', [authenticator, contactController.delete]);
+router.get('/delete-account', [authenticator, contactController.delete]);
+
+/* GET protected contact update route */
+router.get('/update-account', [authenticator, contactController.update]);
+
+/* POST protected contact update processing route */
+router.post('/process-update-account', [authenticator, contactController.processUpdate]);
 
 module.exports = router;

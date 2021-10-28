@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <title>
+    <%= title %>
+  </title>
+
+  <!-- AOS CSS file for animation -->
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <!-- Template Main CSS file -->
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/contact.css" />
+
+</head>
+
+<body>
+  <!-- Include header partial -->
+  <%- include('./partials/header.ejs') -%>
+
+    <main id="main">
+
+      <section class="section pb-5">
+        <div class="container">
+
+          <div class="row my-5 align-items-end">
+            <div class="col-12 contact_heading" data-aos="fade-up">
+              <h2>Contact Update</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-12 mb-md-0" data-aos="fade-up">
+
+              <form id="contact_form" action="/process-update-account" method="post" role="form" class="contact_form">
+
+                <div class="row gy-3">
+                  <div class="col-md-6 form-group">
+                    <label for="first_name">Username: </label>
+                    <input type="text" name="username" class="form-control" id="username"
+                      value="<%=account.username %>">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="last_name">Email: </label>
+                    <input type="email" name="email" class="form-control" id="email" value="<%=account.email %>">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="contact_number">Contact Number: </label>
+                    <input type="tel" name="contact_number" class="form-control" id="contact_number"
+                      value="<%=account.contact_number%>">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label for="name">Address</label>
+                    <input type="text" class="form-control" name="address" id="address" value="<%=account.address %>">
+                  </div>
+                  <input type="hidden" name="account_id" class="form-control" id="account_id" value="<%=account._id %>">
+                  <div class=" col-md-6 mt-5 form-group d-flex justify-content-evenly">
+                    <input type="submit" class="btn d-block w-100 btn-success" value="Save" />
+                    <a href="/contact-list" role="button" class="btn d-block w-100 btn-warning mx-3">Cancel</a>
+                    <a href="/delete-account?account_id=<%= account._id%>" class="btn d-block w-100 btn-danger"
+                      role="button">Delete</a>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Include footer partial -->
+    <%- include('./partials/footer.ejs') -%>
+
+      <!-- Bootstrap scripts -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+      <!-- AOS library script for animations -->
+      <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+      <!-- Template scripts -->
+      <script src="/javascripts/index.js"></script>
+</body>
+
+</html>
